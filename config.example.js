@@ -1,0 +1,4 @@
+window.HOGAR_CONFIG = {
+  apiBaseUrl: "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT_EXEC",
+  clientKey: "PEGA_AQUI_TU_CLIENT_KEY",
+};

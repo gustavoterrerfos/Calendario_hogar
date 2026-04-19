@@ -1,0 +1,10 @@
+{
+  "name": "Hogar Planificador",
+  "short_name": "Hogar",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f1ea",
+  "theme_color": "#f6f1ea",
+  "description": "Planificador doméstico con calendario, checklists e integración .ics."
+}

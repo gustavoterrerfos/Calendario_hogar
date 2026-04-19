@@ -1,0 +1,403 @@
+:root {
+  --bg: #f6f1ea;
+  --surface: #fffdf9;
+  --surface-soft: #f4ede3;
+  --line: #ddd1c1;
+  --text: #2d312b;
+  --muted: #6a6d67;
+  --accent: #5f8565;
+  --accent-dark: #486d4f;
+  --danger: #a85f5f;
+  --radius: 18px;
+  --shadow: 0 16px 36px rgba(75, 58, 40, 0.08);
+  --font: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(218,232,216,0.92), transparent 28%),
+    linear-gradient(180deg, #f7f2eb 0%, #f2ece4 100%);
+}
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  background: #f1ece4;
+  padding: 0.15rem 0.4rem;
+  border-radius: 8px;
+}
+.loading-card, .card, .modal-body {
+  background: var(--surface);
+  border: 1px solid rgba(221, 209, 193, 0.9);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+.app-shell {
+  min-height: 100vh;
+  padding: 20px;
+}
+.loading-card {
+  max-width: 480px;
+  margin: 10vh auto;
+  padding: 32px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+}
+.sidebar {
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+  padding: 20px;
+  background: rgba(248, 242, 235, 0.92);
+  border: 1px solid rgba(221, 209, 193, 0.8);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #dce8d8, #efe3d5);
+}
+.nav {
+  display: grid;
+  gap: 8px;
+}
+.nav a {
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--muted);
+}
+.nav a:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+.sidebar-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+.main {
+  min-width: 0;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.cards-grid, .two-columns, .section-grid, .form-grid {
+  display: grid;
+  gap: 18px;
+}
+.cards-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.two-columns {
+  grid-template-columns: 1.3fr 1fr;
+}
+.section-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.card {
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+.muted, .subtle {
+  color: var(--muted);
+}
+.toolbar, .section-head, .task-line, .agenda-item, .calendar-day-top, .modal-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.section-head, .task-line, .agenda-item, .calendar-day-top {
+  justify-content: space-between;
+}
+.toolbar.wrap {
+  flex-wrap: wrap;
+}
+.button {
+  border: 1px solid var(--line);
+  background: #faf6f0;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.button-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: white;
+  border-color: var(--accent-dark);
+}
+.button-danger {
+  color: var(--danger);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: #efe7db;
+}
+.badge.pending { background: #e5efe2; color: #466245; }
+.badge.completed { background: #d8ecdf; color: #2d6a48; }
+.badge.postponed { background: #efe5d3; color: #876523; }
+.badge.cancelled { background: #f2dfdf; color: #8a4e4e; }
+.list-stack, .agenda-list, .daily-list, .checklist-days, .list-editor {
+  display: grid;
+  gap: 12px;
+}
+.task-line, .agenda-item {
+  padding: 14px;
+  border: 1px solid #e9dfd1;
+  border-radius: 14px;
+  background: #fffdfa;
+}
+.table-wrap {
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ede3d7;
+  vertical-align: top;
+}
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.form-grid label {
+  display: grid;
+  gap: 8px;
+}
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: white;
+}
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 28px;
+}
+.calendar-grid {
+  display: grid;
+  gap: 8px;
+}
+.calendar-header, .calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+.calendar-day {
+  min-height: 150px;
+  padding: 10px;
+  border: 1px solid #e8ddcf;
+  border-radius: 14px;
+  background: #fffdfa;
+}
+.calendar-day.other-month {
+  opacity: 0.5;
+}
+.calendar-items {
+  display: grid;
+  gap: 6px;
+}
+.calendar-item {
+  border-radius: 10px;
+  padding: 7px 8px;
+  background: var(--surface-soft);
+  font-size: 0.84rem;
+}
+.agenda-panel {
+  border: 1px solid #e7ddd0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.agenda-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 14px;
+  background: rgba(255, 252, 247, 0.97);
+  border-bottom: 1px solid #e7ddd0;
+  display: grid;
+  gap: 10px;
+}
+.agenda-scroll {
+  max-height: 68vh;
+  overflow: auto;
+  padding: 14px;
+}
+.agenda-group {
+  border: 1px solid #e5dacb;
+  border-radius: 16px;
+  background: #fffdfa;
+  overflow: hidden;
+}
+.agenda-head {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  background: linear-gradient(180deg, #fcfaf5, #f4ecdf);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+.agenda-body {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+.agenda-group.collapsed .agenda-body {
+  display: none;
+}
+.checklist-days {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.checklist-day {
+  border: 1px solid #e8ddcf;
+  border-radius: 16px;
+  padding: 16px;
+}
+.check-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+.daily-row {
+  display: grid;
+  grid-template-columns: auto 86px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #e8ddcf;
+}
+.list-row {
+  display: grid;
+  grid-template-columns: 36px 1.4fr 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 38, 31, 0.32);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.modal.open {
+  display: flex;
+}
+.modal-body {
+  width: min(640px, 100%);
+  padding: 20px;
+}
+.help-box {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f4ebde;
+  border: 1px solid #e5d7c2;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+  .cards-grid, .two-columns, .section-grid, .form-grid, .checklist-days {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 740px) {
+  .app-shell {
+    padding: 14px;
+  }
+  .calendar-header {
+    display: none;
+  }
+  .calendar-week {
+    grid-template-columns: 1fr;
+  }
+  .calendar-day {
+    min-height: auto;
+  }
+  .topbar, .section-head, .task-line, .agenda-item, .daily-row, .list-row, .agenda-head {
+    flex-direction: column;
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+  .daily-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  .agenda-scroll {
+    max-height: 60vh;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+  .sidebar, .topbar, .no-print, .button {
+    display: none !important;
+  }
+  .layout, .main {
+    display: block;
+  }
+  .card {
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+}
