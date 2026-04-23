@@ -693,7 +693,7 @@ function renderApp() {
           <div class="section-head">
             <div>
               <h2>Tareas puntuales</h2>
-              <p class="muted">Entran automáticamente en agenda, calendario, checklist y `.ics`.</p>
+              <p class="muted">Entran automáticamente en agenda, calendario, checklist y <code>.ics</code>.</p>
             </div>
             <button class="button" data-action="new-oneoff">Nueva puntual</button>
           </div>
@@ -741,7 +741,7 @@ function renderApp() {
             <label><span>Horizonte (meses)</span><input name="planningHorizonMonths" type="number" value="${state.bootstrap.settings.planningHorizonMonths}" /></label>
             <label><span>Hora por defecto</span><input name="defaultTime" type="time" value="${state.bootstrap.settings.defaultTime}" /></label>
             <label><span>Fecha efectiva</span><input name="effectiveDate" type="date" value="${new Date().toISOString().slice(0, 10)}" /></label>
-            <label class="full"><span>Feed `.ics`</span><input value="${esc(state.bootstrap.feedUrl)}" disabled /></label>
+            <label class="full"><span>Feed <code>.ics</code></span><input value="${esc(state.bootstrap.feedUrl)}" disabled /></label>
             <div class="full modal-actions">
               <button class="button button-primary" type="submit">Guardar ajustes</button>
               <button class="button" type="button" data-action="copy-feed">Copiar enlace</button>
@@ -759,7 +759,7 @@ function renderApp() {
           <ol>
             <li>Abre esta web en Safari y pulsa compartir.</li>
             <li>Usa <strong>Añadir a pantalla de inicio</strong>.</li>
-            <li>Para el calendario, copia el enlace `.ics` y suscríbelo desde Ajustes del iPhone.</li>
+            <li>Para el calendario, copia el enlace <code>.ics</code> y suscríbelo desde Ajustes del iPhone.</li>
             <li>La suscripción es de solo lectura y se actualiza cuando regeneras el futuro.</li>
           </ol>
           <div class="help-box">
