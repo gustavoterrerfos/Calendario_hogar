@@ -1,4 +1,4 @@
 window.HOGAR_CONFIG = {
-  apiBaseUrl: "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT_EXEC",
-  clientKey: "PEGA_AQUI_TU_CLIENT_KEY",
+  apiBaseUrl: "https://script.google.com/macros/s/AKfycbwyFBI8p2icjOXnc-T8xK9klQ1B1llnNkE5W1IALGLvGwn9LKhW3XRjo4OERIiqJeZY/exec",
+  clientKey: "hogar_12345",
 };
